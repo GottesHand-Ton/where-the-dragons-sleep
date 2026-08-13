@@ -1,0 +1,63 @@
+
+#game-screen {
+    position: relative;
+    width: min(100vw, var(--game-width));
+    height: calc(min(100vw, var(--game-width)) * 9 / 16);
+    max-height: 100vh;
+    background-color: #1e293b;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.game-screen__dialogue-wrapper {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+}
+
+/* Оверлей для размытия фона во время выборов */
+.game-screen__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    pointer-events: none;
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+    z-index: 4;
+}
+
+.game-screen__overlay_active {
+    background-color: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+}
+
+#character-layer {
+    position: absolute;
+    left: -14%;
+    bottom: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 10%;
+    pointer-events: none;
+    z-index: 4;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.character {
+    max-height: 85%;
+    max-width: 40%;
+    object-fit: contain;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Класс для скрытия слоя аватаров */
+.character-layer_hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}

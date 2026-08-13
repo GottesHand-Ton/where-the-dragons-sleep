@@ -1,0 +1,111 @@
+.dialogue-box {
+    position: relative;
+    width: 100%;
+    min-height: 160px;
+    background: var(--ui-bg-color);
+    backdrop-filter: blur(1px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px 24px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    z-index: 5;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* скрытие юи */
+.dialogue-box_hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.dialogue-box__choices {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.dialogue-box__choice-btn {
+    width: auto;
+    min-width: 220px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+.dialogue-box__choice-btn:hover {
+    background: rgba(251, 191, 36, 0.15);
+    border-color: var(--accent-color);
+    transform: translateX(-4px);
+}
+
+.dialogue-box__choice-btn:active {
+    transform: translateX(-2px);
+}
+
+.dialogue-box__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.dialogue-box__speaker {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    user-select: none;
+}
+
+.dialogue-box__text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    user-select: none;
+    text-align: left;
+}
+
+/* Кнопки назад, скрыть, сохранить, загрузить */
+.quick-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.quick-menu__btn {
+    background: transparent;
+    border: none;
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    opacity: 0.75;
+    cursor: pointer;
+    padding: 4px 0 4px 8px;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.quick-menu__btn:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.quick-menu__btn:active {
+    transform: translateY(0);
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./pictures\icon_novel.svg" type="image/x-icon">
+    <title>Where the dragons sleep</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <!-- контейнер с игрй -->
+    <main class="game-screen" id="game-screen">
+
+        <!-- Окно миниигры с гейзерами -->
+        <div class="minigame-container minigame_hidden" id="minigame-geysers">
+            <div class="minigame-window">
+                <div class="minigame-header">
+                    <h3>Осторожно, гейзеры!</h3>
+                    <!-- Таймер -->
+                    <div class="minigame-timer" id="geyser-timer">01:30</div>
+                </div>
+                <p class="minigame-instructions">Найдите безопасный путь через опасную зону. Остерегайтесь активных
+                    точек!</p>
+
+                <!-- сетка ячеек из js  -->
+                <div class="geyser-grid" id="geyser-grid"></div>
+
+                <!-- Кнопка выхода из миниигры -->
+                <button class="minigame-close-btn" id="minigame-abort">Сдаться</button>
+            </div>
+        </div>
+
+        <!-- блдюр -->
+        <div class="game-screen__overlay" id="screen-overlay"></div>
+
+        <!-- кнопки в сюжетных развилках -->
+        <div class="dialogue-box__choices" id="choice-container"></div>
+
+        <!-- обёртка диалогового окна -->
+        <div class="game-screen__dialogue-wrapper">
+
+            <!-- аватар говорящего -->
+            <div class="game-screen__characters" id="character-layer">
+                <img class="character character_position_left character_hidden" id="character-left" src="">
+            </div>
+
+            <!-- диалоговое окно -->
+            <section class="dialogue-box" id="dialogue-box">
+
+                <div class="dialogue-box__header" id="dialogue-header">
+
+                    <!-- Имя говорящего -->
+                    <div class="dialogue-box__speaker" id="speaker-name">
+                        Имя Персонажа
+                    </div>
+
+                    <!-- панель быстрых кнопок  -->
+                    <nav class="quick-menu dialogue-box__quick-menu" id="quick-menu">
+                        <button class="quick-menu__btn" id="btn-back">Назад</button>
+                        <button class="quick-menu__btn" id="btn-hide">Скрыть UI</button>
+                        <button class="quick-menu__btn" id="btn-save">Сохранить</button>
+                        <button class="quick-menu__btn" id="btn-load">Загрузить</button>
+                    </nav>
+
+                </div>
+
+                <!-- Текст -->
+                <p class="dialogue-box__text" id="dialogue-text">
+                    Текст диалога располагается здесь...
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <script type="module" src="js/core.js"></script>
+</body>
+
+</html>
