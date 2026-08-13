@@ -3,6 +3,51 @@ import { scenes } from './scenario.js';
 import { ui } from './ui.js';
 import { minigames } from './minigames.js';
 
+
+// загрузка картинок при входе на сайт
+const imagesToPreload = [
+    "./pictures/scene/start.webp",
+    "./pictures/narrator/narrator_none.webp",
+    "./pictures/scene/dragon_1.webp",
+    "./pictures/scene/dragon_2.webp",
+    "./pictures/father/father_hungry.webp",
+    "./pictures/scene/dragon_Escape_1.webp",
+    "./pictures/scene/dragon_Escape_2.webp",
+    "./pictures/scene/dragon_Escape_3.webp",
+    "./pictures/scene/pursuit_1.webp",
+    "./pictures/scene/geysers_1.webp",
+    "./pictures/scene/illusorymountains_1.webp",
+    "./pictures/scene/illusorymountains_2.webp",
+    "./pictures/scene/memory_lose.webp",
+    "./pictures/scene/memory_win.webp",
+    "./pictures/scene/new_world_1.webp",
+    "./pictures/scene/new_world_3.webp",
+    "./pictures/scene/tame_beast_1.webp",
+    "./pictures/scene/tame_beast_2.webp",
+    "./pictures/scene/tame_beast_lose_1.webp",
+    "./pictures/scene/tame_beast_lose_2.webp",
+    "./pictures/scene/tracking_1.webp",
+    "./pictures/father/father.webp",
+    "./pictures/scene/dragon_nest_1.webp",
+    "./pictures/scene/final_dragon_1.webp",
+    "./pictures/scene/father_and_mather_1.webp",
+    "./pictures/scene/father_and_mather_2.webp",
+    "./pictures/scene/end_narrator.webp"
+];
+
+
+function preloadImages(imageUrls) {
+    console.log('Начинаю предзагрузку картинок...');
+    
+    imageUrls.forEach((url) => {
+        const img = new Image();
+        img.src = url;
+    });
+}
+
+preloadImages(imagesToPreload);
+
+
 // старт и история (запьсь сцен) 
 let currentSceneId = "start_1";
 let historyStack = [];
