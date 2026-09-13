@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./pictures\icon_novel.svg" type="image/x-icon">
     <title>Where the dragons sleep</title>
-    
+
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -15,21 +15,32 @@
     <!-- контейнер с игрй -->
     <main class="game-screen" id="game-screen">
 
-        <!-- Окно миниигры с гейзерами -->
-        <div class="minigame-container minigame_hidden" id="minigame-geysers">
+        <!-- Контейнер мини-игры -->
+        <div class="minigame-container minigame_hidden" id="minigame-container">
+
             <div class="minigame-window">
+
+                <!-- Таймер -->
                 <div class="minigame-header">
-                    <!-- Таймер -->
-                    <div class="minigame-timer" id="geyser-timer"></div>
+                    <div class="minigame-timer" id="minigame-timer"></div>
                 </div>
-                <p class="minigame-instructions">Здесь должна быть инструкция по прохождению мини игры</p>
 
-                <!-- сетка ячеек из js  -->
-                <div class="geyser-grid" id="geyser-grid"></div>
+                <!-- Инструкция -->
+                <p class="minigame-instructions" id="minigame-instructions">
+                    Здесь должна быть инструкция
+                </p>
 
-                <!-- Кнопка выхода из миниигры -->
-                <button class="minigame-close-btn" id="minigame-abort">Сдаться</button>
+                <!-- Область конкретной мини-игры -->
+                <div id="minigame-content"></div>
+
+                <!-- Выход -->
+                <button class="minigame-close-btn" id="minigame-abort">
+                    Сдаться
+                </button>
+
             </div>
+
+        </div>
         </div>
 
         <!-- блдюр -->

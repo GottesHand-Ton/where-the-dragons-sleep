@@ -1,14 +1,16 @@
 // js/minigames.js
 
 export const minigames = {
+
     // Сапёр "Поле гейзеров"
     playGeysers(onComplete) {
-        const container = document.getElementById('minigame-geysers');
-        const gridElement = document.getElementById('geyser-grid');
-        const timerElement = document.getElementById('geyser-timer');
+        const container = document.getElementById('minigame-container');
+        const gridElement = document.getElementById('minigame-content');
+        const timerElement = document.getElementById('minigame-timer');
         const abortBtn = document.getElementById('minigame-abort');
         const instruction = document.querySelector('.minigame-instructions');
 
+        gridElement.classList.add('geyser-content');
         instruction.textContent = 'На пути гейзеры, найдите безопасный путь!';
 
         if (!container) return;
@@ -186,6 +188,7 @@ export const minigames = {
             clearInterval(timerInterval);
             alert(message);
             container.classList.add('minigame_hidden');
+            gridElement.classList.remove('geyser-content');
 
             abortBtn.removeEventListener('click', abortHandler);
 
@@ -211,29 +214,24 @@ export const minigames = {
 
     },
 
-
     // Мини игра "Найди пару"
     playMemoryGame(onComplete) {
-        // контейнер для игры
-        const overlay = document.createElement('div');
-        overlay.id = 'memory-game-overlay';
-        overlay.style.cssText = `
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            font-family: sans-serif;
-            color: white;
-        `;
 
-        const emojis = ['🔮', '🔮', '✨', '✨', '🧙🏻‍♀️', '🧙🏻‍♀️', '🧙‍♂️', '🧙‍♂️'];
+        const container = document.getElementById('minigame-container');
+        const content = document.getElementById('minigame-content');
+
+        content.className = '';
+
+        container.classList.add('memory-active');
+        container.classList.remove('minigame_hidden');
+
+        const emojis = [
+            '🔮', '🔮',
+            '✨', '✨',
+            '🧙🏻‍♀️', '🧙🏻‍♀️',
+            '🧙‍♂️', '🧙‍♂️'
+        ];
+
         emojis.sort(() => Math.random() - 0.5);
 
         let lives = 3;
@@ -244,51 +242,38 @@ export const minigames = {
         let isGameActive = false;
 
         // Разметка интерфейса мини игры
-        overlay.innerHTML = `
-            <div id="memory-title" style="margin-bottom: 15px; font-size: 20px; font-weight: bold;">Запомните расположение!</div>
-            <div id="memory-lives" style="font-size: 24px; margin-bottom: 20px; letter-spacing: 5px;">❤️❤️❤️</div>
-            <div id="memory-grid" style="
-                display: grid;
-                grid-template-columns: repeat(4, 70px);
-                gap: 15px;
-            "></div>
-        `;
 
-        document.getElementById('game-screen').appendChild(overlay);
-        const grid = document.getElementById('memory-grid');
-        const livesElement = document.getElementById('memory-lives');
-        const titleElement = document.getElementById('memory-title');
+        content.innerHTML = `
+        <div class="memory-title">Запомните расположение!</div>
+        <div class="memory-lives">❤️❤️❤️</div>
+        <div class="memory-grid"></div>
+    `;
 
-        // карточки со смайликами
-        emojis.forEach((emoji, index) => {
+        const grid = content.querySelector('.memory-grid');
+        const livesElement = content.querySelector('.memory-lives');
+        const titleElement = content.querySelector('.memory-title');
+
+        // Карточки со смайликами
+
+        emojis.forEach((emoji) => {
             const card = document.createElement('div');
             card.dataset.emoji = emoji;
-            card.style.cssText = `
-                width: 70px;
-                height: 70px;
-                background: #444;
-                border: 2px solid #555;
-                border-radius: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 32px;
-                cursor: pointer;
-                user-select: none;
-                transition: background 0.2s;
-            `;
+            card.classList.add('memory-card');
 
+            // Сначала карточка открыта
+            card.classList.add('revealed');
             card.textContent = emoji;
 
-            // Обработка клика 
+            // Обработка клика
+
             card.addEventListener('click', () => {
                 if (!isGameActive || lockBoard) return;
                 if (card === firstCard) return;
                 if (card.classList.contains('matched')) return;
 
+                // Открываем карточку
+                card.classList.add('revealed');
                 card.textContent = emoji;
-                card.style.background = '#444';
-
                 if (!firstCard) {
                     firstCard = card;
                     return;
@@ -304,44 +289,52 @@ export const minigames = {
                     matchedPairs++;
                     resetTurn();
 
+                    // Победа
                     if (matchedPairs === 4) {
                         setTimeout(() => {
-                            overlay.remove();
+                            container.classList.remove('memory-active');
+                            container.classList.add('minigame_hidden');
+                            content.innerHTML = '';
                             onComplete(true);
                         }, 600);
                     }
                 } else {
                     lives--;
-                    livesElement.textContent = '❤️'.repeat(lives) + '🖤'.repeat(3 - lives);
+                    livesElement.textContent =
+                        '❤️'.repeat(lives) +
+                        '🖤'.repeat(3 - lives);
 
                     setTimeout(() => {
+                        // Закрываем обе карточки
                         firstCard.textContent = '?';
-                        firstCard.style.background = '#333';
+                        firstCard.classList.remove('revealed');
                         secondCard.textContent = '?';
-                        secondCard.style.background = '#333';
+                        secondCard.classList.remove('revealed');
                         resetTurn();
 
+                        // Проигрыш
                         if (lives <= 0) {
                             setTimeout(() => {
-                                overlay.remove();
+                                container.classList.remove('memory-active');
+                                container.classList.add('minigame_hidden');
+                                content.innerHTML = '';
                                 onComplete(false);
                             }, 200);
                         }
                     }, 800);
                 }
             });
-
             grid.appendChild(card);
         });
 
-        // Таймер для старта
+        // скрытие карт через 1.5 секунды закрываем их
         setTimeout(() => {
-            document.querySelectorAll('#memory-grid div').forEach(card => {
+            grid.querySelectorAll('.memory-card').forEach(card => {
                 card.textContent = '?';
-                card.style.background = '#333';
+                card.classList.remove('revealed');
             });
             isGameActive = true;
-            titleElement.textContent = "Найдите все пары!";
+            titleElement.textContent = 'Найдите все пары!';
         }, 1500);
 
         // Сброс текущего выбора карточек
@@ -351,6 +344,7 @@ export const minigames = {
             lockBoard = false;
         }
     },
+
 
     // Мини игра Кликер
     playClickerGame(onComplete) {

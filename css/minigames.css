@@ -26,11 +26,11 @@
     padding: 20px;
     text-align: center;
     color: #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     max-width: 400px;
 }
 
-.minigame-window h3 {
+.minigame-window {
     margin-bottom: 10px;
     font-size: 20px;
     color: #ffaa44;
@@ -43,7 +43,7 @@
 }
 
 /* Сетка сапёра  */
-.geyser-grid {
+.geyser-content {
     display: grid;
     grid-template-columns: repeat(6, 40px);
     grid-template-rows: repeat(6, 40px);
@@ -84,6 +84,7 @@
     background: #6b2e2e;
     border-color: #a84343;
 }
+
 
 /* Кнопка выхода */
 .minigame-close-btn {
@@ -130,8 +131,73 @@
     animation: pulse 1s infinite;
 }
 
+.memory-title {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.memory-lives {
+    font-size: 24px;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    gap: 15px;
+}
+
+.memory-card {
+    width: 70px;
+    height: 70px;
+    background: #444;
+    border: 2px solid #555;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+}
+
+.memory-card.revealed {
+    background: #444;
+}
+
+.memory-card:not(.revealed) {
+    background: #333;
+}
+
+.memory-card.matched {
+    background: #444;
+}
+
+.minigame-container.memory-active .minigame-instructions {
+    display: none;
+}
+
+.minigame-container.memory-active .minigame-header {
+    display: none;
+}
+
+.minigame-container.memory-active .minigame-close-btn {
+    display: none;
+}
+
 @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
