@@ -7,6 +7,9 @@ export const minigames = {
         const gridElement = document.getElementById('geyser-grid');
         const timerElement = document.getElementById('geyser-timer');
         const abortBtn = document.getElementById('minigame-abort');
+        const instruction = document.querySelector('.minigame-instructions');
+
+        instruction.textContent = 'На пути гейзеры, найдите безопасный путь!';
 
         if (!container) return;
 
@@ -205,6 +208,7 @@ export const minigames = {
         abortBtn.addEventListener('click', abortHandler);
 
         initGame();
+
     },
 
 

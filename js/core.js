@@ -54,6 +54,7 @@ let historyStack = [];
 
 const gameScreen = document.getElementById('game-screen');
 
+
 // блокировка кликов во время мини игры
 let isMinigameActive = false;
 
@@ -68,6 +69,8 @@ function loadScene(sceneId, saveToHistory = true) {
 
         // geysers
         if (scene.minigame === "geysers") {
+
+
             minigames.playGeysers((success) => {
                 isMinigameActive = false;
                 if (success) {
