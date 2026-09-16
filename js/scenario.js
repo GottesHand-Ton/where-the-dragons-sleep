@@ -1,157 +1,274 @@
-// js/scenario.js
-
-export const  scenes = {
+export const scenes = {
     "start_1": {
-        background: "./pictures/scene/start.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "Ах, отцовство, что может быть лучше, чем гулять со своей дочкой по полю?",
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Наконец-то. Я уже думала, что ты заблудился.",
         next: "start_2"
     },
 
     "start_2": {
-        background: "./pictures/scene/start.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "Конечно, есть небольшие опасности, вдруг дочка споткнётся или порежется об траву?",
-        next: "start_Dragon_1"
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Я специально задержался. Хотел проверить, будешь ли ты меня ждать.",
+        next: "start_3"
     },
 
-    "start_Dragon_1": {
-        background: "./pictures/scene/dragon_1.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "...",
-        next: "start_Dragon_2"
+    "start_3": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Очень смешно. Ладно, куда идём?",
+        next: "start_4"
     },
 
-    "start_Dragon_2": {
-        background: "./pictures/scene/dragon_2.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "...",
-        next: "start_Dragon_3"
+    "start_4": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Сначала прогуляемся. А там посмотрим, куда нас занесёт.",
+        next: "start_5"
     },
 
-    "start_Dragon_3": {
-        background: "./pictures/scene/dragon_2.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "Или её унесёт дракон!",
-        next: "father_1"
-    },
-
-    "father_1": {
-        background: "./pictures/scene/dragon_2.webp",
-        characterLeft: "./pictures/father/father_hungry.webp",
-        speaker: "Отец",
-        text: "ВЕРНИ МНЕ МОЮ ДОЧЬ!!!",
+    "start_5": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Ты, получается, сегодня вообще ничего не планировал?",
         choices: [
-            { text: "Бросить в дракона камень", target: "dragon_Escape_1" },
-            { text: "Побежать за драконом", target: "pursuit_1" }
+            { text: "Главное было пригласить тебя. Остальное разберёмся.", target: "start_6" },
+            { text: "План есть. Но я не собираюсь раскрывать его сразу.", target: "start_7" }
         ]
     },
 
-    "dragon_Escape_1": {
-        background: "./pictures/scene/dragon_Escape_1.webp",
-        characterLeft: null,
-        speaker: "Система",
-        text: "Вы бросили камень...",
-        next: "dragon_Escape_2"
+    "start_6": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Хорошо сказано.",
+        next: "animator_1"
     },
 
-    "dragon_Escape_2": {
-        background: "./pictures/scene/dragon_Escape_2.webp",
-        characterLeft: null,
-        speaker: "Система",
-        text: "Камень попал по дракону и отлетел.",
-        next: "dragon_Escape_3"
+    "start_7": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Интрига? Ладно, принимается.",
+        next: "animator_1"
     },
 
-    "dragon_Escape_3": {
-        background: "./pictures/scene/dragon_Escape_3.webp",
-        characterLeft: null,
-        speaker: "Система",
-        text: "Дракон безвозвратно улетел. Вы потеряли дочь. Нажмите в любое место, чтобы начать с чекпоинта.",
-        next: "father_1"
+    "animator_1": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Молодые люди! Хотите проверить, кто из вас лучше двигается?",
+        next: "animator_2"
     },
 
-
-    "pursuit_1": {
-        background: "./pictures/scene/pursuit_1.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "Вы смело кинулись в погоню за драконом. Настоящий отец!",
-        next: "pursuit_2"
+    "animator_2": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "О, это уже интересно.",
+        next: "animator_3"
     },
 
-    "pursuit_2": {
-        background: "./pictures/scene/pursuit_1.webp",
-        characterLeft: "./pictures/father/father_hungry.webp",
-        speaker: "Отец",
-        text: "Убежать от меня?! Не бывать этому!",
-        next: "pursuit_3"
+    "animator_3": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Давай. Только потом не грусти, что проиграла!",
+        next: "minegame-sweeper_start"
     },
 
-    "pursuit_3": {
-        background: "./pictures/scene/pursuit_1.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "Наш герой смело бросился в погоню, но что это перед ним?",
-        next: "geysers_1"
+    "minegame-sweeper_start": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Правила простые: Пройдите полосу препятствий не задев мины!",
+        next: "minesweeper_game"
     },
 
-    "geysers_1": {
-        background: "./pictures/scene/geysers_1.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "Это гейзеры. Полный вулкан действующих гейзеров! Нужно аккуратно пройти сквозь них.",
-        next: "geysers_game"
+    "minesweeper_game":
+    {
+        minigame: "sweeper",
+        winScene: "minesweeper_win",
+        loseScene: "minesweeper_lose"
     },
 
-    "geysers_game": {
-        minigame: "geysers",
-        winScene: "geysers_win",
-        loseScene: "geysers_lose"
+    "minesweeper_lose": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Хотите попробовать ещё раз? Нажмите в любое место.",
+        next: "minesweeper_game"
+},
+    
+    "minesweeper_win": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Ну что, победитель, доволен собой?",
+        choices: [
+            { text: "Вполне. Но главное — ты тоже повеселилась.", target: "game_good" },
+            { text: "Теперь ты должна признать, что я хорош.", target: "game_bad" }
+        ]
     },
 
-    "geysers_win": {
-        background: "./pictures/scene/geysers_1.webp",
-        characterLeft: "./pictures/father/father_hungry.webp",
-        speaker: "Отец",
-        text: "Верни мне мою дочь!",
-        next: "Illusory Mountains_1"
+    "game_good": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "За это мне и нравится с тобой разговаривать.",
+        next: "questions_1"
     },
 
-    "geysers_lose": {
-        background: "./pictures/scene/geysers_1.webp",
-        characterLeft: null,
-        speaker: "Система",
-        text: "Вы наступили на гейзер. Нажмите в любое место, чтобы начать с чекпоинта.",
-        next: "father_1"
+    "game_bad": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Скромность тебе явно не помешала бы.",
+        next: "questions_1"
     },
 
-    "Illusory Mountains_1": {
-        background: "./pictures/scene/illusorymountains_1.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "О нет, дракон открыл портал!",
-        next: "Illusory Mountains_2"
+    "questions_1": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Теперь серьёзно. Что ты обычно делаешь, когда хочешь отдохнуть?",
+        next: "questions_2"
     },
 
-    "Illusory Mountains_2": {
-        background: "./pictures/scene/illusorymountains_2.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "Это проблема, ведь на входе стоит иллюзорный барьер.",
-        next: "Illusory Mountains_3"
+    "questions_2": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Слушаю музыку, гуляю, иногда смотрю фильмы. Ничего необычного.",
+        next: "questions_3"
     },
 
-    "Illusory Mountains_3": {
-        background: "./pictures/scene/illusorymountains_2.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "Сможет ли наш герой взломать барьер и пройти в новый мир?",
+    "questions_3": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Какой фильм ты могла бы пересматривать сколько угодно раз?",
+        next: "questions_4"
+    },
+
+    "questions_4": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Есть один. Но я не скажу какой.",
+        next: "questions_5"
+    },
+
+    "questions_5": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "А то вдруг ты начнёшь делать вид, что тоже его обожаешь.",
+        next: "questions_6"
+    },
+
+    "questions_6": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Не переживай. Если фильм плохой — я так и скажу.",
+        next: "questions_7"
+    },
+
+    "questions_7": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Вот поэтому с тобой интересно.",
+        next: "questions_8"
+    },
+
+    "questions_8": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Теперь моя очередь. Почему именно меня ты пригласил?",
+        choices: [
+            { text: "Потому что мне интересно проводить с тобой время.", target: "questions_good" },
+            { text: "Ты показалась мне интересной. Решил проверить.", target: "questions_good" },
+            { text: "А это секрет.", target: "questions_neutral" }
+        ]
+    },
+
+    "questions_good": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Хороший ответ.",
+        next: "questions_9"
+    },
+
+    "questions_neutral": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Значит, придётся самой выяснять.",
+        next: "questions_9"
+    },
+
+    "questions_9": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Тогда вопрос тебе. Что ты больше всего ценишь в людях?",
+        next: "questions_10"
+    },
+
+    "questions_10": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Честность. И чувство юмора. Без этого долго общаться сложно.",
+        next: "fortune_1"
+    },
+
+    "fortune_1": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "А вот и пара, которой явно интересно узнать своё будущее.",
+        next: "fortune_2"
+    },
+
+    "fortune_2": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Мы вообще-то ещё не пара.",
+        next: "fortune_3"
+    },
+
+    "fortune_3": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Тогда судьба ещё не определилась.",
+        next: "fortune_4"
+    },
+
+    "fortune_4": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Ну раз судьба не определилась, давай поможем ей.",
+        next: "memory_start"
+    },
+
+    "memory_start": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Ваша задача — найти пары символов. Посмотрим, насколько хорошо вы запоминаете детали.",
         next: "memory_game"
     },
 
@@ -162,155 +279,295 @@ export const  scenes = {
     },
 
     "memory_lose": {
-        background: "./pictures/scene/memory_lose.webp",
-        characterLeft: null,
-        speaker: "Система",
-        text: "Вы не разгадали магический шифр, и портал навсегда закрылся. Нажмите в любое место, чтобы начать с чекпоинта.",
-        next: "Illusory Mountains_3"
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Ха-ха, ты даже двух карточек запомнить не можешь?",
+        next: "memory_lose_2"
+    },
+
+    "memory_lose_2": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Зато теперь я знаю, что на тебя в таких играх лучше не рассчитывать.",
+        next: "memory_lose_3"
+    },
+
+    "memory_lose_3": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Ну а что? Ты сама захотела поиграть, я теперь виноват?",
+        next: "memory_lose_4"
+    },
+
+    "memory_lose_4": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Ясно...",
+        next: "memory_lose_5"
+    },
+
+    "memory_lose_5": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Спасибо за вечер. Я, пожалуй, пойду.",
+        next: "memory_lose_6"
+    },
+
+    "memory_lose_6": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Хотите увидеть другую концовку? Нажмите в любое место.",
+        next: "memory_start"
     },
 
     "memory_win": {
-        background: "./pictures/scene/memory_win.webp",
-        characterLeft: null,
-        speaker: "Система",
-        text: "Вы верно разгадали магические символы, портал открыт!",
-        next: "new_world_1"
-    },
-
-    "new_world_1": {
-        background: "./pictures/scene/new_world_1.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "Отец делает шаг сквозь портал и замирает. Перед ним открывается мир парящих островов и неоновых лесов.",
-        next: "new_world_2"
-    },
-
-    "new_world_2": {
-        background: "./pictures/scene/new_world_1.webp",
-        characterLeft: "./pictures/father/father_hungry.webp",
-        speaker: "Отец",
-        text: "Этот дракон думал, что сможет скрыться в другом измерении от меня?",
-        next: "new_world_3"
-    },
-
-    "new_world_3": {
-        background: "./pictures/scene/new_world_3.webp",
-        characterLeft: null,
-        speaker: "Система",
-        text: "Под ногами вы видите магический посох.",
-        next: "new_world_4"
-    },
-
-    "new_world_4": {
-        background: "./pictures/scene/new_world_1.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "Вдалеке силуэт дракона с девочкой на спине скрывается за гигантским кристальным пиком. Нужно спешить!",
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Ну как?",
         choices: [
-            { text: "Взять в руки магический посох и идти по следам", target: "tracking_1" },
-            { text: "Попытаться приручить местного дракончика для погони", target: "tame_beast_1" }
+            { text: "Отлично сыграла. Не знал, что у тебя такая хорошая память!", target: "memory_good" },
+            { text: "Скажем так — гадалка получила достаточно денег за подсказки.", target: "memory_funny" }
         ]
     },
 
-    "tame_beast_1": {
-        background: "./pictures/scene/tame_beast_1.webp",
-        characterLeft: "./pictures/father/father_hungry.webp",
-        speaker: "Отец",
-        text: "Эй, чешуйчатый! Подвезешь отца?",
-        next: "tame_beast_2"
+    "memory_good": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Зато я теперь знаю, кто из нас двоих будет отвечать за память.",
+        next: "walk_2"
     },
 
-    "tame_beast_2": {
-        background: "./pictures/scene/tame_beast_2.webp",
-        characterLeft: null,
-        speaker: "Система",
-        text: "Дракончик оценил ваш юмор и попыталось утащить ваш рюкзак! Быстро возвращайте своё имущество!",
-        next: "clicker_game"
+    "memory_funny": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Хорошо, что чувство юмора у тебя лучше памяти.",
+        next: "walk_2"
     },
 
-    "clicker_game": {
+    "walk_2": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Мне нравится, что ты пытаешься меня подколоть.",
+        next: "walk_3"
+    },
+
+    "walk_3": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "А мне нравится, что ты не обижаешься, а смеёшься.",
+        next: "thief_1"
+    },
+
+    "thief_1": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "О, подожди, я хочу посмотреть вот на тот стенд.",
+        next: "thief_2"
+    },
+
+    "thief_2": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Внезапно мимо девушки быстро проходит незнакомец.",
+        next: "thief_3"
+    },
+
+    "thief_3": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Стой! Он забрал мою сумку!",
+        next: "thief_4"
+    },
+
+    "thief_4": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Стой! Он забрал мою сумку!",
+        choices: [
+            { text: "Бросится в погоню за вором", target: "clicker_start" },
+            { text: "Остаться успокаивать девушку", target: "thief_stay" }
+        ]
+    },
+
+    "thief_stay": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Он забрал мою сумку! Почему ты его не догоняешь?!",
+        next: "thief_stay_2"
+    },
+
+    "thief_stay_2": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "А что я мог сделать? Он уже убежал.",
+        next: "thief_stay_3"
+    },
+
+    "thief_stay_3": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Можно было хотя бы попробовать.",
+        next: "thief_stay_4"
+    },
+
+    "thief_stay_4": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Знаешь... я, пожалуй, пойду. Не хочу больше продолжать это свидание.",
+        next: "thief_stay_5"
+    },
+
+    "thief_stay_5": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Хотите увидеть другую концовку? Нажмите в любое место.",
+        next: "thief_4"
+    },
+
+    "clicker_start": {
         minigame: "clicker",
-        winScene: "tame_beast_win",
-        loseScene: "tame_beast_lose"
+        winScene: "clicker_win",
+        loseScene: "clicker_lose"
     },
 
-    "tame_beast_lose": {
-        background: "./pictures/scene/tame_beast_lose_1.webp",
-        characterLeft: "./pictures/father/father_hungry.webp",
-        speaker: "Отец",
-        text: "Нет! Верни мой рюкзак!",
-        next: "tame_beast_lose_2"
+    "clicker_lose": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Он забрал мою сумку... Там всё было — телефон, документы...",
+        next: "clicker_lose_2"
     },
 
-    "tame_beast_lose_2": {
-        background: "./pictures/scene/tame_beast_lose_2.webp",
-        characterLeft: null,
-        speaker: "Система",
-        text: "Без рюкзака вы заблудились, изголодали и умерли. Нажмите в любое место, чтобы начать с чекпоинта.",
-        next: "new_world_3"
+    "clicker_lose_2": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Спокойно. Главное, что ты сама не пострадала.",
+        next: "clicker_lose_3"
     },
 
-    "tame_beast_win": {
-        background: "./pictures/scene/tame_beast_1.webp",
-        characterLeft: "./pictures/father/father_hungry.webp",
-        speaker: "Отец",
-        text: "Ха! Получи, рюкзак мой!",
-        next: "tracking_1"
+    "clicker_lose_3": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Да, но сумку всё равно жалко...",
+        next: "clicker_lose_4"
     },
 
-    "tracking_1": {
-        background: "./pictures/scene/tracking_1.webp",
-        characterLeft: null,
-        speaker: "Система",
-        text: "Вы подобрали посох и продолжили путь.",
-        next: "tracking_2"
+    "clicker_lose_4": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Понимаю. Давай хотя бы найдём охрану и попробуем что-нибудь сделать.",
+        next: "clicker_lose_5"
     },
 
-    "tracking_2": {
-        background: "./pictures/scene/tracking_1.webp",
-        characterLeft: "./pictures/father/father.webp",
-        speaker: "Отец",
-        text: "Пешком так пешком. Моему терпению нет предела.",
-        next: "dragon_nest_1"
+    "clicker_lose_5": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Не надо... Уже поздно. Он наверняка далеко.",
+        next: "clicker_lose_6"
     },
 
-    "dragon_nest_1": {
-        background: "./pictures/scene/dragon_nest_1.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "Герой выходит к огромному кратеру, усыпанному сокровищами. В центре сидит тот самый дракон, а дочка... увлеченно играет с его хвостом!",
-        next: "final_dragon_1"
+    "clicker_lose_6": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Спасибо, что остался со мной. Но, если честно, после этого мне уже не хочется продолжать свидание.",
+        next: "clicker_lose_7"
     },
 
-    "final_dragon_1": {
-        background: "./pictures/scene/final_dragon_1.webp",
-        characterLeft: "./pictures/father/father_hungry.webp",
-        speaker: "Отец",
-        text: "Доча, сколько раз я говорил: не трогай чужих драконов и не играй с их хвостами! Немедленно марш сюда!",
-        next: "final_dragon_2"
+    "clicker_lose_7": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Понимаю. Тогда давай на этом закончим.",
+        next: "bad_ending"
     },
 
-    "final_dragon_2": {
-        background: "./pictures/scene/father_and_mather_1.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "Дракон предпочёл вернуть ребенка добровольно.",
-        next: "father_and_mather"
+    "bad_ending": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Вы попрощались, и девушка ушла. Свидание закончилось раньше, чем вы планировали.",
+        next: "restart"
     },
 
-    "father_and_mather": {
-        background: "./pictures/scene/father_and_mather_2.webp",
-        characterLeft: "./pictures/father/father.webp",
-        speaker: "Отец",
-        text: "Дорогая, мы дома!",
-        next: "end"
+    "clicker_win": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Держи. Кажется, сегодня удача на моей стороне.",
+        next: "final_1"
     },
 
-    "end": {
-        background: "./pictures/scene/end_narrator.webp",
-        characterLeft: "./pictures/narrator/narrator_none.webp",
-        speaker: "Рассказчик",
-        text: "Вот и конец этой сказки... Спасибо, что прочли!",
-        next: null
-    }
-};
+    "final_1": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Теперь с тебя кофе за спасение.",
+        next: "final_2"
+    },
+
+    "final_3": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Кофе? Хорошо. Но только если я сама выберу место!",
+        next: "final_1"
+    },
+
+    "final_4": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Договорились.",
+        next: "final_2"
+    },
+
+    "final_5": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Остаток свидания вы весело разговаривали и знакомились друг с другом",
+        next: "final_good"
+    },
+
+    "good_ending": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Вы ещё долго гуляли по фестивалю, обсуждая, куда сходите в следующий раз.",
+        next: "restart"
+    },
+
+    "restart": {
+        background: "",
+        characterLeft: "",
+        speaker: "",
+        text: "Хотите начать сначала? Нажмите в любое место!",
+        next: "start_1"
+    },
+
+}

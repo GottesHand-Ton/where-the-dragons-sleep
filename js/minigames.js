@@ -5,12 +5,12 @@ export const minigames = {
     // Сапёр "Поле гейзеров"
     playGeysers(onComplete) {
         const container = document.getElementById('minigame-container');
-        const gridElement = document.getElementById('minigame-content');
+        const content = document.getElementById('minigame-content');
         const timerElement = document.getElementById('minigame-timer');
         const abortBtn = document.getElementById('minigame-abort');
         const instruction = document.querySelector('.minigame-instructions');
 
-        gridElement.classList.add('geyser-content');
+        content.classList.add('geyser-content');
         instruction.textContent = 'На пути гейзеры, найдите безопасный путь!';
 
         if (!container) return;
@@ -55,7 +55,7 @@ export const minigames = {
 
         // Создание игрового поля
         function initGame() {
-            gridElement.innerHTML = '';
+            content.innerHTML = '';
             board = [];
             revealedCount = 0;
             timeLeft = 30;
@@ -107,7 +107,7 @@ export const minigames = {
                     cell.dataset.col = c;
 
                     cell.addEventListener('click', () => handleCellClick(r, c, cell));
-                    gridElement.appendChild(cell);
+                    content.appendChild(cell);
                 }
             }
         }
@@ -147,7 +147,7 @@ export const minigames = {
             cellData.revealed = true;
             revealedCount++;
 
-            const cellElement = gridElement.children[r * cols + c];
+            const cellElement = content.children[r * cols + c];
             cellElement.classList.add('revealed');
 
             if (cellData.count > 0) {
@@ -175,7 +175,7 @@ export const minigames = {
             for (let r = 0; r < rows; r++) {
                 for (let c = 0; c < cols; c++) {
                     if (board[r][c].mine) {
-                        const cellElement = gridElement.children[r * cols + c];
+                        const cellElement = content.children[r * cols + c];
                         cellElement.classList.add('geyser');
                         cellElement.textContent = '🌋';
                     }
@@ -188,7 +188,7 @@ export const minigames = {
             clearInterval(timerInterval);
             alert(message);
             container.classList.add('minigame_hidden');
-            gridElement.classList.remove('geyser-content');
+            content.classList.remove('geyser-content');
 
             abortBtn.removeEventListener('click', abortHandler);
 
@@ -219,9 +219,13 @@ export const minigames = {
 
         const container = document.getElementById('minigame-container');
         const content = document.getElementById('minigame-content');
+        const abortBtn = document.getElementById('minigame-abort');
+
+
+
 
         content.className = '';
-
+        content.classList.add('memory_content');
         container.classList.add('memory-active');
         container.classList.remove('minigame_hidden');
 
@@ -292,6 +296,8 @@ export const minigames = {
                     // Победа
                     if (matchedPairs === 4) {
                         setTimeout(() => {
+                            abortBtn.removeEventListener('click', abortHandler);
+                            content.classList.remove('memory_content');
                             container.classList.remove('memory-active');
                             container.classList.add('minigame_hidden');
                             content.innerHTML = '';
@@ -315,6 +321,8 @@ export const minigames = {
                         // Проигрыш
                         if (lives <= 0) {
                             setTimeout(() => {
+                                abortBtn.removeEventListener('click', abortHandler);
+                                content.classList.remove('memory_content');
                                 container.classList.remove('memory-active');
                                 container.classList.add('minigame_hidden');
                                 content.innerHTML = '';
@@ -343,105 +351,117 @@ export const minigames = {
             secondCard = null;
             lockBoard = false;
         }
+
+        // кнопка сдатся
+        const abortHandler = () => {
+            isGameActive = false;
+            container.classList.remove('memory-active');
+            container.classList.add('minigame_hidden');
+            content.classList.remove('memory_content');
+            content.innerHTML = '';
+            abortBtn.removeEventListener('click', abortHandler);
+            if (typeof onComplete === 'function') {
+                onComplete(false);
+            }
+        };
+
+        abortBtn.addEventListener('click', abortHandler);
+
     },
 
 
     // Мини игра Кликер
     playClickerGame(onComplete) {
-        const overlay = document.createElement('div');
-        overlay.id = 'clicker-game-overlay';
-        overlay.style.cssText = `
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            font-family: sans-serif;
-            color: white;
-            user-select: none;
-        `;
+
+        const container = document.getElementById('minigame-container');
+        const content = document.getElementById('minigame-content');
+        const instruction = document.getElementById('minigame-instructions');
+        const timerEl = document.getElementById('minigame-timer');
+        const abortBtn = document.getElementById('minigame-abort');
+        content.classList.add('clicker-content');
+
+        container.classList.add('clicker-active');
+        container.classList.remove('minigame_hidden');
+
+        instruction.textContent = 'Верните рюкзак! Кликайте быстрее!';
 
         // Игровые значения
         let clicks = 0;
         const targetClicks = 15;
-        let timeLeft = 5.0;
+        const targetTime = 5.0;
+        let timeLeft = targetTime;
         let gameInterval = null;
         let isFinished = false;
 
-        // Инетрфейс 
-        overlay.innerHTML = `
-            <div style="font-size: 22px; margin-bottom: 10px; font-weight: bold;">Верните рюкзак! Кликайте быстрее!</div>
-            <div id="clicker-timer" style="font-size: 20px; color: #ff4757; margin-bottom: 20px;">Осталось времени: 5.0 с</div>
-            <div id="clicker-target" style="
-                width: 140px;
-                height: 140px;
-                background: #ff6b81;
-                border: 4px solid #fff;
-                border-radius: 50%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
-                font-size: 24px;
-                font-weight: bold;
-                box-shadow: 0 0 20px rgba(255, 107, 129, 0.6);
-                transition: transform 0.05s;
-            ">
-                🎒<br>
-                <span id="clicker-counter" style="font-size: 18px; margin-top: 5px;">0 / 15</span>
-            </div>
-        `;
+        // Интерфейс
+        content.innerHTML = `
+        <div class="clicker-target">
+            🎒<br>
+            <span class="clicker-counter">0 / 15</span>
+        </div>
+    `;
+        const targetBtn = content.querySelector('.clicker-target');
+        const counterEl = content.querySelector('.clicker-counter');
 
-        document.getElementById('game-screen').appendChild(overlay);
-
-        const targetBtn = document.getElementById('clicker-target');
-        const counterEl = document.getElementById('clicker-counter');
-        const timerEl = document.getElementById('clicker-timer');
-
-        // Обработка клика 
+        // Обработка клика
         targetBtn.addEventListener('click', () => {
             if (isFinished) return;
             clicks++;
             counterEl.textContent = `${clicks} / ${targetClicks}`;
-            targetBtn.style.transform = 'scale(0.92)';
+            targetBtn.classList.add('clicked');
             setTimeout(() => {
-                if (!isFinished) targetBtn.style.transform = 'scale(1)';
+                if (!isFinished) {
+                    targetBtn.classList.remove('clicked');
+                }
             }, 50);
 
-            // победа
+            // Победа
             if (clicks >= targetClicks) {
                 isFinished = true;
                 clearInterval(gameInterval);
-                overlay.remove();
+                abortBtn.removeEventListener('click', abortHandler);
+                content.classList.remove('clicker-content');
+                container.classList.remove('clicker-active');
+                container.classList.add('minigame_hidden');
+                content.innerHTML = '';
                 onComplete(true);
             }
         });
 
-        // таймера обратного отсчета
+        // Таймер обратного отсчёта
         const startTime = Date.now();
         gameInterval = setInterval(() => {
             if (isFinished) return;
-
             const elapsed = (Date.now() - startTime) / 1000;
-            timeLeft = Math.max(0, 5.0 - elapsed);
-            timerEl.textContent = `Осталось времени: ${timeLeft.toFixed(1)} с`;
+            timeLeft = Math.max(0, targetTime - elapsed);
+            timerEl.textContent =
+                `Осталось времени: ${timeLeft.toFixed(1)} с`;
 
-            // поражение
             if (timeLeft <= 0) {
                 isFinished = true;
                 clearInterval(gameInterval);
-                overlay.remove();
+                abortBtn.removeEventListener('click', abortHandler);
+                content.classList.remove('clicker-content');
+                container.classList.remove('clicker-active');
+                container.classList.add('minigame_hidden');
+                content.innerHTML = '';
                 onComplete(false);
             }
         }, 100);
-    }
 
+        // Кнопка «Сдаться»
+        function abortHandler() {
+            if (isFinished) return;
+            isFinished = true;
+            clearInterval(gameInterval);
+            abortBtn.removeEventListener('click', abortHandler);
+            content.classList.remove('clicker-content');
+            container.classList.remove('clicker-active');
+            container.classList.add('minigame_hidden');
+            content.innerHTML = '';
+            onComplete(false);
+        }
 
+        abortBtn.addEventListener('click', abortHandler);
+    },
 };

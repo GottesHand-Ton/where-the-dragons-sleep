@@ -39,7 +39,7 @@
 .minigame-instructions {
     font-size: 14px;
     color: #bbb;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
 /* Сетка сапёра  */
@@ -131,6 +131,10 @@
     animation: pulse 1s infinite;
 }
 
+.memory_content {
+    padding: 0 0 16px 0;
+}
+
 .memory-title {
     margin-bottom: 15px;
     font-size: 20px;
@@ -184,8 +188,37 @@
     display: none;
 }
 
-.minigame-container.memory-active .minigame-close-btn {
-    display: none;
+.clicker-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0 12px 0;
+}
+
+.clicker-target {
+    width: 140px;
+    height: 140px;
+    background: #ff6b81;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(255, 107, 129, 0.6);
+    transition: transform 0.05s;
+}
+
+.clicker-counter {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.clicker-target.clicked {
+    transform: scale(0.92);
 }
 
 @keyframes pulse {
