@@ -15,6 +15,26 @@
     <!-- контейнер с игрй -->
     <main class="game-screen" id="game-screen">
 
+        <div class="name-screen" id="name-screen">
+            <div class="name-screen__window">
+                <h1 class="name-screen__title">Where the dragons sleep</h1>
+
+                <label class="name-screen__label" for="player-name">
+                    Ваше имя
+                </label>
+                <input class="name-screen__input" id="player-name" type="text" maxlength="20" placeholder="Введите имя"
+                    autocomplete="new-password">
+                <label class="name-screen__label" for="girl-name">
+                    Имя девушки
+                </label>
+                <input class="name-screen__input" id="girl-name" type="text" maxlength="20" placeholder="Введите имя"
+                    autocomplete="new-password">
+                <button class="name-screen__button" id="start-game">
+                    Начать игру
+                </button>
+            </div>
+        </div>
+
         <!-- Контейнер мини-игры -->
         <div class="minigame-container minigame_hidden" id="minigame-container">
 

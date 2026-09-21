@@ -95,6 +95,7 @@
     border-radius: 6px;
     cursor: pointer;
     transition: background 0.2s;
+    user-select: none;
 }
 
 .minigame-close-btn:hover {
@@ -123,6 +124,7 @@
     font-size: 16px;
     color: #ffaa44;
     font-weight: bold;
+    user-select: none;
 }
 
 .minigame-timer.danger {

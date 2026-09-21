@@ -2,7 +2,7 @@ export const scenes = {
     "start_1": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Наконец-то. Я уже думала, что ты заблудился.",
         next: "start_2"
     },
@@ -10,7 +10,7 @@ export const scenes = {
     "start_2": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Я специально задержался. Хотел проверить, будешь ли ты меня ждать.",
         next: "start_3"
     },
@@ -18,7 +18,7 @@ export const scenes = {
     "start_3": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Очень смешно. Ладно, куда идём?",
         next: "start_4"
     },
@@ -26,7 +26,7 @@ export const scenes = {
     "start_4": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Сначала прогуляемся. А там посмотрим, куда нас занесёт.",
         next: "start_5"
     },
@@ -34,7 +34,7 @@ export const scenes = {
     "start_5": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Ты, получается, сегодня вообще ничего не планировал?",
         choices: [
             { text: "Главное было пригласить тебя. Остальное разберёмся.", target: "start_6" },
@@ -45,7 +45,7 @@ export const scenes = {
     "start_6": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Хорошо сказано.",
         next: "animator_1"
     },
@@ -53,7 +53,7 @@ export const scenes = {
     "start_7": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Интрига? Ладно, принимается.",
         next: "animator_1"
     },
@@ -61,7 +61,7 @@ export const scenes = {
     "animator_1": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "Аниматор",
         text: "Молодые люди! Хотите проверить, кто из вас лучше двигается?",
         next: "animator_2"
     },
@@ -69,15 +69,15 @@ export const scenes = {
     "animator_2": {
         background: "",
         characterLeft: "",
-        speaker: "",
-        text: "О, это уже интересно.",
+        speaker: "{girlName}",
+        text: "О, это уже интересно, сыграем?",
         next: "animator_3"
     },
 
     "animator_3": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Давай. Только потом не грусти, что проиграла!",
         next: "minegame-sweeper_start"
     },
@@ -85,7 +85,7 @@ export const scenes = {
     "minegame-sweeper_start": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "Аниматор",
         text: "Правила простые: Пройдите полосу препятствий не задев мины!",
         next: "minesweeper_game"
     },
@@ -108,7 +108,7 @@ export const scenes = {
     "minesweeper_win": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Ну что, победитель, доволен собой?",
         choices: [
             { text: "Вполне. Но главное — ты тоже повеселилась.", target: "game_good" },
@@ -119,7 +119,7 @@ export const scenes = {
     "game_good": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "За это мне и нравится с тобой разговаривать.",
         next: "questions_1"
     },
@@ -127,7 +127,7 @@ export const scenes = {
     "game_bad": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Скромность тебе явно не помешала бы.",
         next: "questions_1"
     },
@@ -135,7 +135,7 @@ export const scenes = {
     "questions_1": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Теперь серьёзно. Что ты обычно делаешь, когда хочешь отдохнуть?",
         next: "questions_2"
     },
@@ -143,7 +143,7 @@ export const scenes = {
     "questions_2": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Слушаю музыку, гуляю, иногда смотрю фильмы. Ничего необычного.",
         next: "questions_3"
     },
@@ -151,7 +151,7 @@ export const scenes = {
     "questions_3": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Какой фильм ты могла бы пересматривать сколько угодно раз?",
         next: "questions_4"
     },
@@ -159,7 +159,7 @@ export const scenes = {
     "questions_4": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Есть один. Но я не скажу какой.",
         next: "questions_5"
     },
@@ -167,7 +167,7 @@ export const scenes = {
     "questions_5": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "А то вдруг ты начнёшь делать вид, что тоже его обожаешь.",
         next: "questions_6"
     },
@@ -175,7 +175,7 @@ export const scenes = {
     "questions_6": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Не переживай. Если фильм плохой — я так и скажу.",
         next: "questions_7"
     },
@@ -183,7 +183,7 @@ export const scenes = {
     "questions_7": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Вот поэтому с тобой интересно.",
         next: "questions_8"
     },
@@ -191,7 +191,7 @@ export const scenes = {
     "questions_8": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Теперь моя очередь. Почему именно меня ты пригласил?",
         choices: [
             { text: "Потому что мне интересно проводить с тобой время.", target: "questions_good" },
@@ -203,7 +203,7 @@ export const scenes = {
     "questions_good": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Хороший ответ.",
         next: "questions_9"
     },
@@ -211,7 +211,7 @@ export const scenes = {
     "questions_neutral": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Значит, придётся самой выяснять.",
         next: "questions_9"
     },
@@ -219,7 +219,7 @@ export const scenes = {
     "questions_9": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Тогда вопрос тебе. Что ты больше всего ценишь в людях?",
         next: "questions_10"
     },
@@ -227,7 +227,7 @@ export const scenes = {
     "questions_10": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Честность. И чувство юмора. Без этого долго общаться сложно.",
         next: "fortune_1"
     },
@@ -235,7 +235,7 @@ export const scenes = {
     "fortune_1": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "Гадалка",
         text: "А вот и пара, которой явно интересно узнать своё будущее.",
         next: "fortune_2"
     },
@@ -243,7 +243,7 @@ export const scenes = {
     "fortune_2": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Мы вообще-то ещё не пара.",
         next: "fortune_3"
     },
@@ -251,7 +251,7 @@ export const scenes = {
     "fortune_3": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "Гадалка",
         text: "Тогда судьба ещё не определилась.",
         next: "fortune_4"
     },
@@ -259,7 +259,7 @@ export const scenes = {
     "fortune_4": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Ну раз судьба не определилась, давай поможем ей.",
         next: "memory_start"
     },
@@ -267,7 +267,7 @@ export const scenes = {
     "memory_start": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "Гадалка",
         text: "Ваша задача — найти пары символов. Посмотрим, насколько хорошо вы запоминаете детали.",
         next: "memory_game"
     },
@@ -281,7 +281,7 @@ export const scenes = {
     "memory_lose": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Ха-ха, ты даже двух карточек запомнить не можешь?",
         next: "memory_lose_2"
     },
@@ -289,7 +289,7 @@ export const scenes = {
     "memory_lose_2": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Зато теперь я знаю, что на тебя в таких играх лучше не рассчитывать.",
         next: "memory_lose_3"
     },
@@ -297,7 +297,7 @@ export const scenes = {
     "memory_lose_3": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Ну а что? Ты сама захотела поиграть, я теперь виноват?",
         next: "memory_lose_4"
     },
@@ -305,7 +305,7 @@ export const scenes = {
     "memory_lose_4": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Ясно...",
         next: "memory_lose_5"
     },
@@ -313,7 +313,7 @@ export const scenes = {
     "memory_lose_5": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Спасибо за вечер. Я, пожалуй, пойду.",
         next: "memory_lose_6"
     },
@@ -321,7 +321,7 @@ export const scenes = {
     "memory_lose_6": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "Система",
         text: "Хотите увидеть другую концовку? Нажмите в любое место.",
         next: "memory_start"
     },
@@ -329,7 +329,7 @@ export const scenes = {
     "memory_win": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Ну как?",
         choices: [
             { text: "Отлично сыграла. Не знал, что у тебя такая хорошая память!", target: "memory_good" },
@@ -340,7 +340,7 @@ export const scenes = {
     "memory_good": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Зато я теперь знаю, кто из нас двоих будет отвечать за память.",
         next: "walk_2"
     },
@@ -348,7 +348,7 @@ export const scenes = {
     "memory_funny": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Хорошо, что чувство юмора у тебя лучше памяти.",
         next: "walk_2"
     },
@@ -356,7 +356,7 @@ export const scenes = {
     "walk_2": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Мне нравится, что ты пытаешься меня подколоть.",
         next: "walk_3"
     },
@@ -364,7 +364,7 @@ export const scenes = {
     "walk_3": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "А мне нравится, что ты не обижаешься, а смеёшься.",
         next: "thief_1"
     },
@@ -372,7 +372,7 @@ export const scenes = {
     "thief_1": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "О, подожди, я хочу посмотреть вот на тот стенд.",
         next: "thief_2"
     },
@@ -388,15 +388,15 @@ export const scenes = {
     "thief_3": {
         background: "",
         characterLeft: "",
-        speaker: "",
-        text: "Стой! Он забрал мою сумку!",
+        speaker: "Вор",
+        text: "Ха-ха, попробуй догони!",
         next: "thief_4"
     },
 
     "thief_4": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Стой! Он забрал мою сумку!",
         choices: [
             { text: "Бросится в погоню за вором", target: "clicker_start" },
@@ -407,7 +407,7 @@ export const scenes = {
     "thief_stay": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Он забрал мою сумку! Почему ты его не догоняешь?!",
         next: "thief_stay_2"
     },
@@ -415,7 +415,7 @@ export const scenes = {
     "thief_stay_2": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "А что я мог сделать? Он уже убежал.",
         next: "thief_stay_3"
     },
@@ -423,7 +423,7 @@ export const scenes = {
     "thief_stay_3": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Можно было хотя бы попробовать.",
         next: "thief_stay_4"
     },
@@ -431,7 +431,7 @@ export const scenes = {
     "thief_stay_4": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Знаешь... я, пожалуй, пойду. Не хочу больше продолжать это свидание.",
         next: "thief_stay_5"
     },
@@ -439,7 +439,7 @@ export const scenes = {
     "thief_stay_5": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "Система",
         text: "Хотите увидеть другую концовку? Нажмите в любое место.",
         next: "thief_4"
     },
@@ -453,7 +453,7 @@ export const scenes = {
     "clicker_lose": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Он забрал мою сумку... Там всё было — телефон, документы...",
         next: "clicker_lose_2"
     },
@@ -461,7 +461,7 @@ export const scenes = {
     "clicker_lose_2": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Спокойно. Главное, что ты сама не пострадала.",
         next: "clicker_lose_3"
     },
@@ -469,7 +469,7 @@ export const scenes = {
     "clicker_lose_3": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Да, но сумку всё равно жалко...",
         next: "clicker_lose_4"
     },
@@ -477,7 +477,7 @@ export const scenes = {
     "clicker_lose_4": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Понимаю. Давай хотя бы найдём охрану и попробуем что-нибудь сделать.",
         next: "clicker_lose_5"
     },
@@ -485,7 +485,7 @@ export const scenes = {
     "clicker_lose_5": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Не надо... Уже поздно. Он наверняка далеко.",
         next: "clicker_lose_6"
     },
@@ -493,7 +493,7 @@ export const scenes = {
     "clicker_lose_6": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Спасибо, что остался со мной. Но, если честно, после этого мне уже не хочется продолжать свидание.",
         next: "clicker_lose_7"
     },
@@ -501,7 +501,7 @@ export const scenes = {
     "clicker_lose_7": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Понимаю. Тогда давай на этом закончим.",
         next: "bad_ending"
     },
@@ -509,7 +509,7 @@ export const scenes = {
     "bad_ending": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "Система",
         text: "Вы попрощались, и девушка ушла. Свидание закончилось раньше, чем вы планировали.",
         next: "restart"
     },
@@ -517,7 +517,7 @@ export const scenes = {
     "clicker_win": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Держи. Кажется, сегодня удача на моей стороне.",
         next: "final_1"
     },
@@ -525,7 +525,7 @@ export const scenes = {
     "final_1": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{playerName}",
         text: "Теперь с тебя кофе за спасение.",
         next: "final_2"
     },
@@ -533,7 +533,7 @@ export const scenes = {
     "final_3": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Кофе? Хорошо. Но только если я сама выберу место!",
         next: "final_1"
     },
@@ -541,7 +541,7 @@ export const scenes = {
     "final_4": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "{girlName}",
         text: "Договорились.",
         next: "final_2"
     },
@@ -549,7 +549,7 @@ export const scenes = {
     "final_5": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "Система",
         text: "Остаток свидания вы весело разговаривали и знакомились друг с другом",
         next: "final_good"
     },
@@ -557,7 +557,7 @@ export const scenes = {
     "good_ending": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "Система",
         text: "Вы ещё долго гуляли по фестивалю, обсуждая, куда сходите в следующий раз.",
         next: "restart"
     },
@@ -565,7 +565,7 @@ export const scenes = {
     "restart": {
         background: "",
         characterLeft: "",
-        speaker: "",
+        speaker: "Система",
         text: "Хотите начать сначала? Нажмите в любое место!",
         next: "start_1"
     },
