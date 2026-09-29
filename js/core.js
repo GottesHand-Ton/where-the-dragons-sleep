@@ -10,6 +10,8 @@ const startGameButton = document.getElementById('start-game');
 
 // загрузка картинок при входе на сайт
 const imagesToPreload = [
+    '../pictures/start_1.jpg',
+    
 
 ];
 
@@ -122,6 +124,10 @@ gameScreen.addEventListener('click', (event) => {
         return;
     }
 
+        if (!document.getElementById('message-window').classList.contains('message-window_hidden')) {
+        return;
+    }
+
     const scene = scenes[currentSceneId];
 
     // возврат юи по клику если оно скрыто
@@ -151,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const enteredGirlName = girlNameInput.value.trim();
 
         if (!enteredPlayerName || !enteredGirlName) {
-            alert('Введите оба имени!');
+            ui.showMessage('Введите оба имени!');
             return;
         }
 
@@ -222,9 +228,9 @@ girlNameInput.addEventListener('keydown', (event) => {
             }
             nameScreen.classList.add('name-screen_hidden');
             loadScene(currentSceneId, false);
-            alert('Игра загружена!');
+            ui.showMessage('Игра успешно загружена!');
         } else {
-            alert('Сохранений не найдено!');
+            ui.showMessage('Сохранений не найдено!');
         }
     });
 });

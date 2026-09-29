@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./pictures\icon_novel.svg" type="image/x-icon">
-    <title>Where the dragons sleep</title>
+    <link rel="shortcut icon" href="./pictures\icon_novel.png" type="image/x-icon">
+    <title>Фестиваль свиданий!</title>
 
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -17,7 +17,7 @@
 
         <div class="name-screen" id="name-screen">
             <div class="name-screen__window">
-                <h1 class="name-screen__title">Where the dragons sleep</h1>
+                <h1 class="name-screen__title">Приветствуем на фестивале свиданий!</h1>
 
                 <label class="name-screen__label" for="player-name">
                     Ваше имя
@@ -31,6 +31,15 @@
                     autocomplete="new-password">
                 <button class="name-screen__button" id="start-game">
                     Начать игру
+                </button>
+            </div>
+        </div>
+        <div class="message-window message-window_hidden" id="message-window">
+            <div class="message-window__content">
+                <p class="message-window__text" id="message-text"></p>
+
+                <button class="message-window__button" id="message-ok">
+                    OK
                 </button>
             </div>
         </div>

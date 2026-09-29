@@ -48,7 +48,7 @@ export const minigames = {
 
                 if (timeLeft <= 0) {
                     clearInterval(timerInterval);
-                    endGame(false, "Время вышло! Гейзеры активировались.");
+                    endGame(false);
                 }
             }, 1000);
         }
@@ -124,7 +124,7 @@ export const minigames = {
                 revealAllMines();
                 clearInterval(timerInterval);
                 setTimeout(() => {
-                    endGame(false, "Вы активировали гейзер! Путь прегражден.");
+                    endGame(false);
                 }, 800);
                 return;
             }
@@ -135,7 +135,7 @@ export const minigames = {
             // Победа
             if (revealedCount === (rows * cols - minesCount)) {
                 clearInterval(timerInterval);
-                endGame(true, "Путь успешно пройден!");
+                endGame(true);
             }
         }
 
@@ -184,9 +184,8 @@ export const minigames = {
         }
 
         // Завершение мини-игры
-        function endGame(success, message) {
+        function endGame(success) {
             clearInterval(timerInterval);
-            alert(message);
             container.classList.add('minigame_hidden');
             content.classList.remove('geyser-content');
 

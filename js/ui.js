@@ -4,10 +4,22 @@ const choiceContainer = document.getElementById('choice-container');
 const characterLeftImg = document.getElementById('character-left');
 const gameScreen = document.getElementById('game-screen');
 const screenOverlay = document.getElementById('screen-overlay');
+const messageWindow = document.getElementById('message-window');
+const messageText = document.getElementById('message-text');
+const messageOkButton = document.getElementById('message-ok');
 
 export const ui = {
     // Таймер для для эффекта "Печати в реальном времени"
     typingTimeout: null,
+
+    showMessage(message) {
+        messageText.textContent = message;
+        messageWindow.classList.remove('message-window_hidden');
+    },
+
+    hideMessage() {
+        messageWindow.classList.add('message-window_hidden');
+    },
 
     // Побуквенный вывод
     updateDialogue(speaker, text) {
@@ -118,4 +130,9 @@ export const ui = {
         dialogueBox.classList.remove('dialogue-box_hidden');
         if (characterLayer) characterLayer.classList.remove('character-layer_hidden');
     }
+
 };
+
+messageOkButton.addEventListener('click', () => {
+    ui.hideMessage();
+});

@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Lora';
+    font-weight: 600;
+    font-style: normal;
+    src:
+        url("../fonts/Lora.woff2") format("woff2"),
+        url("../fonts/Lora.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    font-weight: 600;
+    font-style: italic;
+    src:
+        url("../fonts/Lora-Italic.woff2") format("woff2"),
+        url("../fonts/Lora-Italic.woff") format("woff");
+    font-display: swap;
+}

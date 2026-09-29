@@ -1,6 +1,6 @@
 export const scenes = {
     "start_1": {
-        background: "",
+        background: "../pictures/start_1.jpg",
         characterLeft: "",
         speaker: "{girlName}",
         text: "Наконец-то. Я уже думала, что ты заблудился.",
@@ -8,7 +8,7 @@ export const scenes = {
     },
 
     "start_2": {
-        background: "",
+        background: "../pictures/start_1 (2).jpg",
         characterLeft: "",
         speaker: "{playerName}",
         text: "Я специально задержался. Хотел проверить, будешь ли ты меня ждать.",
