@@ -34,9 +34,23 @@
     backdrop-filter: blur(6px);
 }
 
-#character-layer {
+.character-layer-left {
     position: absolute;
-    left: -14%;
+    left: -15%;
+    bottom: 74%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 10%;
+    pointer-events: none;
+    z-index: 4;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.character-layer-right {
+    position: absolute;
+    left: 70%;
     bottom: 100%;
     width: 100%;
     display: flex;
@@ -49,8 +63,9 @@
 }
 
 .character {
-    max-height: 85%;
-    max-width: 40%;
+    user-select: none;
+    max-height: 100%;
+    max-width: 45%;
     object-fit: contain;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }

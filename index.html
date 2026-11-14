@@ -25,7 +25,7 @@
                 <input class="name-screen__input" id="player-name" type="text" maxlength="20" placeholder="Введите имя"
                     autocomplete="new-password">
                 <label class="name-screen__label" for="girl-name">
-                    Имя девушки
+                    Имя партнёра
                 </label>
                 <input class="name-screen__input" id="girl-name" type="text" maxlength="20" placeholder="Введите имя"
                     autocomplete="new-password">
@@ -82,8 +82,11 @@
         <div class="game-screen__dialogue-wrapper">
 
             <!-- аватар говорящего -->
-            <div class="game-screen__characters" id="character-layer">
-                <img class="character character_position_left character_hidden" id="character-left" src="">
+            <div class="game-screen__characters  character-layer-left" id="">
+                <img class="character character_hidden" id="character-left" src="">
+            </div>
+            <div class="game-screen__characters character-layer-right" id="">
+                <img class="character character_hidden" id="character-right" src="">
             </div>
 
             <!-- диалоговое окно -->

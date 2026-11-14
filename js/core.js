@@ -10,9 +10,18 @@ const startGameButton = document.getElementById('start-game');
 
 // загрузка картинок при входе на сайт
 const imagesToPreload = [
-    '../pictures/start_1.jpg',
-    
-
+    'pictures/background/image1.png',
+    'pictures/background/image2.png',
+    'pictures/background/image3.png',
+    'pictures/background/image4.png',
+    'pictures/background/image5.png',
+    'pictures/background/image6.png',
+    'pictures/background/image7.png',
+    'pictures/background/image8.png',
+    'pictures/background/image9.png',
+    'pictures/background/image10.png',
+    'pictures/background/image11.png',
+    'pictures/background/image12.png'
 ];
 
 

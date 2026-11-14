@@ -195,6 +195,7 @@
     justify-content: center;
     align-items: center;
     padding: 8px 0 12px 0;
+    user-select: none;
 }
 
 .clicker-target {
